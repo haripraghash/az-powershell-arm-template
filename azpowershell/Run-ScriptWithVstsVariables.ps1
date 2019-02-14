@@ -40,7 +40,7 @@ Uninstall-Module -Name AzureRM -AllVersions
 Write-Host 'AzureRM module removed'
 }
 Write-Host ($params | Out-String)
-Install-Module Az -AllowClobber -Confirm:$true
+Install-Module Az -AllowClobber -Confirm:$false
 
 $cred = New-Object System.Management.Automation.PSCredential($rawParams['serviceprincipalid'], $rawParams['serviceprincipalpassword'])
 
