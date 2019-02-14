@@ -10,13 +10,10 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
-- script: ls
-  displayName: 'Run a one-line script'
-
 - task: CopyFiles@2
   displayName: Copy provisioning scripts
   inputs:
-    SourceFolder: az-powershell-arm-template/azpowershell
+    SourceFolder: azpowershell
     TargetFolder: '$(build.artifactstagingdirectory)/iac'
 
 - task: PublishBuildArtifacts@1
