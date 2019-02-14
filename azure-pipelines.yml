@@ -10,6 +10,9 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
+- script: ls
+  displayName: 'Run a one-line script'
+
 - task: CopyFiles@2
   displayName: Copy provisioning scripts
   inputs:
