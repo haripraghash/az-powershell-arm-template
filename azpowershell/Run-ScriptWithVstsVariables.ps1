@@ -42,9 +42,9 @@ Write-Host 'AzureRM module removed'
 Write-Host ($params | Out-String)
 Install-Module Az -AllowClobber -Confirm:$true
 
-$cred = New-Object System.Management.Automation.PSCredential($params['serviceprincipalid'], $params['serviceprincipalpassword'])
+$cred = New-Object System.Management.Automation.PSCredential($rawParams['serviceprincipalid'], $rawParams['serviceprincipalpassword'])
 
-Login-AzAccount -Credential $cred -ServicePrincipal -Subscription $params['subscriptionid'] -Tenant $params['tenantid']
+Login-AzAccount -Credential $cred -ServicePrincipal -Subscription $rawParams['subscriptionid'] -Tenant $rawParams['tenantid']
 
 
 Write-Host ($params | Out-String)
