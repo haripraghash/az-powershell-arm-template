@@ -10,10 +10,15 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- task: CopyFiles@2
+  displayName: Copy provisioning scripts
+  inputs:
+    SourceFolder: az-powershell-arm-template/azpowershell
+    TargetFolder: '$(build.artifactstagingdirectory)/iac'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: PublishBuildArtifacts@1
+  displayName: Publish infrastructure artifacts
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)/iac'
+    ArtifactName: iac
+
