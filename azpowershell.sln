@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.28531.58
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "azpowershell", "azpowershell\azpowershell.deployproj", "{9059C9C2-E3CF-4444-8AEA-91D76981AC92}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A5D2B442-C630-497A-B6C2-7E0CEA4AF22A}"
+	ProjectSection(SolutionItems) = preProject
+		azpowershell\Run-ScriptWithVstsVariables.ps1 = azpowershell\Run-ScriptWithVstsVariables.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
